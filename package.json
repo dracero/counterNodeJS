@@ -11,11 +11,21 @@
     "react-scripts": "1.1.4",
     "redux": "4.0.0"
   },
+  engines": {
+    "node": ">=4.3.2"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "repo-tools lint",
+    "pretest": "npm run lint",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test",
+    "e2e-test": "repo-tools test deploy"
   }
 }
+
